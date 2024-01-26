@@ -51,6 +51,7 @@ public class Lab2P2_GabrielOsorto {
                                 System.out.println("2. Salir");
                                 System.out.print("Que desea hacer:");
                                 int opEstudiante = sc.nextInt();
+                                System.out.println("");
                                 switch (opEstudiante) {
                                     case 1:
                                         System.out.println("Lista de recursos");
@@ -77,14 +78,24 @@ public class Lab2P2_GabrielOsorto {
                                 System.out.println("3. Salir");
                                 System.out.print("Que desea hacer?:");
                                 int opMaestro = sc.nextInt();
+                                System.out.println("");
                                 switch (opMaestro) {
                                     case 1:
+                                        System.out.println("Lista de recursos");
+                                        ListarRecursos(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
                                         break;
                                     case 2:
+                                        System.out.println("Agregar recursos");
+                                        AgregarRecursos(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
                                         break;
                                     case 3:
+                                        System.out.println("Saliendo.....");
+                                        seguirProfe = false;
                                         break;
                                     default:
+                                        System.out.println("OPCION NO DISPONIBLE");
                                         break;
 
                                 }
@@ -92,7 +103,44 @@ public class Lab2P2_GabrielOsorto {
                             break;
                         //FIN CASE PROFESOR
                         case "bibliotecario":
-                            System.out.println("Ya ya mijo ya");
+                            boolean seguirBiblio = true;
+                            while (seguirBiblio == true) {
+                                System.out.println("Menu Profesor");
+                                System.out.println("1. Listar recursos");
+                                System.out.println("2. Agregar Recursos");
+                                System.out.println("3. Modificar Recursos");
+                                System.out.println("4. Eliminar Recurso");
+                                System.out.println("5. Salir");
+                                System.out.print("Que desea hacer?:");
+                                int opMaestro = sc.nextInt();
+                                System.out.println("");
+                                switch (opMaestro) {
+                                    case 1:
+                                        System.out.println("Lista de recursos");
+                                        ListarRecursos(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
+                                        break;
+                                    case 2:
+                                        System.out.println("Agregar recursos");
+                                        AgregarRecursos(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
+                                        break;
+                                    case 3:
+                                        System.out.println("Modificar Recursos");
+                                        break;
+                                    case 4:
+                                        System.out.println("Eliminar Recurso");
+                                        break;
+                                    case 5:
+                                        System.out.println("Saliendo.....");
+                                        seguirBiblio = false;
+                                        break;
+                                    default:
+                                        System.out.println("OPCION NO DISPONIBLE");
+                                        break;
+
+                                }
+                            }
                             break;
                     }
                     //FIN CASE BIBLIOTECARIO
@@ -126,7 +174,44 @@ public class Lab2P2_GabrielOsorto {
 
     public static void AgregarRecursos(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
         System.out.println("Agregar Recursos:");
-        System.out.println("Que tipo de recurso desea agregar?");
+        System.out.println("===Tipos de Recursos===");
+        System.out.println("1.Libros");
+        System.out.println("2.Articulos");
+        System.out.println("3.Cursos");
+        System.out.println("4. Conferencias");
+        System.out.print("Que tipo de recurso desea agregar?");
+        int tipoAgregar = sc.nextInt();
+        switch (tipoAgregar) {
+            case 1:
+                boolean LibroDisponibleAgregado = true;
+                System.out.print("Ingrese el nombre del Libro:");
+                String TituloLibroAgredado = lt.nextLine();
+                System.out.print("Ingrese el nombre del autor:");
+                String AutorTituloAgregado = lt.nextLine();
+                System.out.println("Ingrese el genero del libro:");
+                String GeneroLibroAgregado = lt.nextLine();
+                System.out.println("Ingrese el año de publicacion:");
+                int AñoPublicacioLibroAgregado = sc.nextInt();
+                System.out.println("El libro esta disponible?:");
+                String LibroAgregadoDisponible = lt.nextLine();
+                if (LibroAgregadoDisponible.equalsIgnoreCase("si")) {
+                    LibroDisponibleAgregado = true;
+                } else if (LibroAgregadoDisponible.equalsIgnoreCase("no")) {
+                    LibroDisponibleAgregado = false;
+                }
+                Libros nuevoLibro = new Libros(TituloLibroAgredado, AutorTituloAgregado, GeneroLibroAgregado, AñoPublicacioLibroAgregado, LibroDisponibleAgregado);
+                libros.add(nuevoLibro);
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
     }//fin metodo AgregarRecursos
 }//fin de la clase
 

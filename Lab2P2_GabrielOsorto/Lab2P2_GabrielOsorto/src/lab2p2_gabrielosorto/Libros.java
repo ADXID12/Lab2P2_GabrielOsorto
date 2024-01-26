@@ -7,10 +7,10 @@ public class Libros {
     String TituloLibro;
     String AutorLibro;
     String GeneroLibro;
-    Date AñoPubliLibro;
+    int AñoPubliLibro;
     Boolean DispoLibro;
 
-    public Libros(String TituloLibro, String AutorLibro, String GeneroLibro, Date AñoPubliLibro, Boolean DispoLibro) {
+    public Libros(String TituloLibro, String AutorLibro, String GeneroLibro, int AñoPubliLibro, Boolean DispoLibro) {
         this.AutorLibro = AutorLibro;
         this.TituloLibro = TituloLibro;
         this.GeneroLibro = GeneroLibro;
@@ -42,11 +42,11 @@ public class Libros {
         this.GeneroLibro = GeneroLibro;
     }
 
-    public Date getAñoPubliLibro() {
+    public int getAñoPubliLibro() {
         return AñoPubliLibro;
     }
 
-    public void setAñoPubliLibro(Date AñoPubliLibro) {
+    public void setAñoPubliLibro(int AñoPubliLibro) {
         this.AñoPubliLibro = AñoPubliLibro;
     }
 
