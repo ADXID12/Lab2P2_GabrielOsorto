@@ -280,16 +280,93 @@ public class Lab2P2_GabrielOsorto {
         int opEliminar = sc.nextInt();
         switch (opEliminar) {
             case 1:
+                if (!librosArray.isEmpty()) {
+                    for (int i = 0; i < librosArray.size(); i++) {
+                        Libros Books = librosArray.get(i);
+                        System.out.print(Books);
+                    }
+                    System.out.print("Que libro desea eliminar?:");
+                    int eliminarOpcion = sc.nextInt();
+
+                    if (eliminarOpcion >= 1 && eliminarOpcion <= librosArray.size()) {
+                        librosArray.remove(eliminarOpcion - 1);
+                        System.out.println("libro eliminada con éxito.");
+                    } else {
+                        System.out.println("libro no existente.");
+                    }
+                    System.out.println("");
+                } else {
+                    System.out.println("no hay libros que eliminar");
+                }
                 break;
+
             case 2:
+                if (!articulosArray.isEmpty()) {
+                    for (int i = 0; i < articulosArray.size(); i++) {
+                        ArtiCULOS arti = articulosArray.get(i);
+                        System.out.println(arti);
+                    }
+                    System.out.print("Que articulo desea eliminar?:");
+                    int eliminarOpcion = sc.nextInt();
+
+                    if (eliminarOpcion >= 1 && eliminarOpcion <= articulosArray.size()) {
+                        articulosArray.remove(eliminarOpcion - 1);
+                        System.out.println("articulo eliminada con éxito.");
+                    } else {
+                        System.out.println("articulo no existente.");
+                    }
+                    System.out.println("");
+                } else {
+                    System.out.println("no hay articulos que eliminar");
+                }
                 break;
+
             case 3:
+                if (!cursosArray.isEmpty()) {
+                    for (int i = 0; i < cursosArray.size(); i++) {
+                        CursosenLinea cursoslista = cursosArray.get(i);
+                        System.out.println(cursoslista);
+                    }
+                    System.out.print("Que curso desea eliminar?:");
+                    int eliminarOpcion = sc.nextInt();
+
+                    if (eliminarOpcion >= 1 && eliminarOpcion <= cursosArray.size()) {
+                        cursosArray.remove(eliminarOpcion - 1);
+                        System.out.println("curso eliminada con éxito.");
+                    } else {
+                        System.out.println("curso no existente.");
+                    }
+                    System.out.println("");
+                } else {
+                    System.out.println("no hay cursos que eliminar");
+                }
                 break;
+
             case 4:
+                if (!conferenciasArray.isEmpty()) {
+                    for (int i = 0; i < conferenciasArray.size(); i++) {
+                        ConferenciasVirtuales confe = conferenciasArray.get(i);
+                        System.out.println(confe);
+                    }
+                    System.out.print("Que conferencia desea eliminar?:");
+                    int eliminarOpcion = sc.nextInt();
+
+                    if (eliminarOpcion >= 1 && eliminarOpcion <= conferenciasArray.size()) {
+                        conferenciasArray.remove(eliminarOpcion - 1);
+                        System.out.println("conferencia eliminada con éxito.");
+                    } else {
+                        System.out.println("conferencia no existente.");
+                    }
+                    System.out.println("");
+                } else {
+                    System.out.println("no hay conferencias que eliminar");
+                }
                 break;
+
             default:
+                System.out.println("Opcion no valida o no disponible");
                 break;
-        }
-    }
+        }//fin switch eliminar recurso
+    }//fin metodo eliminar recurso
 }//fin de la clase
 
