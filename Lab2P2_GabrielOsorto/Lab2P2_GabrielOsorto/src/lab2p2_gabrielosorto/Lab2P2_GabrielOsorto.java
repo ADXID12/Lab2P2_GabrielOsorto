@@ -107,7 +107,7 @@ public class Lab2P2_GabrielOsorto {
                         case "bibliotecario":
                             boolean seguirBiblio = true;
                             while (seguirBiblio == true) {
-                                System.out.println("Menu Profesor");
+                                System.out.println("Menu Bibliotecario");
                                 System.out.println("1. Listar recursos");
                                 System.out.println("2. Agregar Recursos");
                                 System.out.println("3. Modificar Recursos");
@@ -172,7 +172,8 @@ public class Lab2P2_GabrielOsorto {
             ConferenciasVirtuales confe = conferenciasArray.get(i);
             System.out.println(confe);
         }
-    }//fin del metodo imprimir recursos
+    }
+    //fin metodo Listar Recursos
 
     public static void AgregarRecursos(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
         System.out.println("Agregar Recursos:");
@@ -183,6 +184,7 @@ public class Lab2P2_GabrielOsorto {
         System.out.println("4. Conferencias");
         System.out.print("Que tipo de recurso desea agregar?");
         int tipoAgregar = sc.nextInt();
+        System.out.println("");
         switch (tipoAgregar) {
             case 1:
                 boolean LibroDisponibleAgregado = true;
@@ -190,11 +192,11 @@ public class Lab2P2_GabrielOsorto {
                 String TituloLibroAgredado = lt.nextLine();
                 System.out.print("Ingrese el nombre del autor:");
                 String AutorTituloAgregado = lt.nextLine();
-                System.out.println("Ingrese el genero del libro:");
+                System.out.print("Ingrese el genero del libro:");
                 String GeneroLibroAgregado = lt.nextLine();
-                System.out.println("Ingrese el año de publicacion:");
+                System.out.print("Ingrese el año de publicacion:");
                 int AñoPublicacioLibroAgregado = sc.nextInt();
-                System.out.println("El libro esta disponible?:");
+                System.out.print("El libro esta disponible?:");
                 String LibroAgregadoDisponible = lt.nextLine();
                 if (LibroAgregadoDisponible.equalsIgnoreCase("si")) {
                     LibroDisponibleAgregado = true;
@@ -213,11 +215,11 @@ public class Lab2P2_GabrielOsorto {
                 String TituloArticuloAgredado = lt.nextLine();
                 System.out.print("Ingrese el nombre del autor:");
                 String AutorArticuloAgregado = lt.nextLine();
-                System.out.println("Ingrese el genero del libro:");
+                System.out.print("Ingrese el genero del libro:");
                 String TemaArticuloAgregado = lt.nextLine();
-                System.out.println("Ingrese el año de publicacion:");
+                System.out.print("Ingrese el año de publicacion:");
                 int AñoPublicacioArticuloAgregado = sc.nextInt();
-                System.out.println("El libro esta disponible(si/no)?:");
+                System.out.print("El libro esta disponible(si/no)?:");
                 String ArticuloAgregadoDisponible = lt.nextLine();
                 if (ArticuloAgregadoDisponible.equalsIgnoreCase("si")) {
                     ArticuloDisponibleAgregado = true;
@@ -267,7 +269,8 @@ public class Lab2P2_GabrielOsorto {
                 break;
             //Fin case default
         }
-    }//fin metodo AgregarRecursos
+    }
+    //fin metodo AgregarRecursos
 
     public static void EliminarRecurso(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
         System.out.println("Eliminar Recursos");
@@ -278,6 +281,7 @@ public class Lab2P2_GabrielOsorto {
         System.out.println("4. Conferencias");
         System.out.print("Que tipo de recurso desea eliminar?:");
         int opEliminar = sc.nextInt();
+        System.out.println("");
         switch (opEliminar) {
             case 1:
                 if (!librosArray.isEmpty()) {
@@ -298,7 +302,9 @@ public class Lab2P2_GabrielOsorto {
                 } else {
                     System.out.println("no hay libros que eliminar");
                 }
+                System.out.println("");
                 break;
+            //fin case 1
 
             case 2:
                 if (!articulosArray.isEmpty()) {
@@ -319,7 +325,9 @@ public class Lab2P2_GabrielOsorto {
                 } else {
                     System.out.println("no hay articulos que eliminar");
                 }
+                System.out.println("");
                 break;
+            //Fin case 2
 
             case 3:
                 if (!cursosArray.isEmpty()) {
@@ -340,7 +348,9 @@ public class Lab2P2_GabrielOsorto {
                 } else {
                     System.out.println("no hay cursos que eliminar");
                 }
+                System.out.println("");
                 break;
+            //fin case 3
 
             case 4:
                 if (!conferenciasArray.isEmpty()) {
@@ -361,12 +371,18 @@ public class Lab2P2_GabrielOsorto {
                 } else {
                     System.out.println("no hay conferencias que eliminar");
                 }
+                System.out.println("");
                 break;
+            //Fin case 4
 
             default:
                 System.out.println("Opcion no valida o no disponible");
+                System.out.println("");
                 break;
+            //Fin case default
         }//fin switch eliminar recurso
-    }//fin metodo eliminar recurso
+    }
+    //fin metodo eliminar recurso
+
 }//fin de la clase
 
