@@ -6,10 +6,10 @@ public class CursosenLinea {
 
     String TituloCurso;
     String Instructor;
-    Date DuracionSemanas;
+    int DuracionSemanas;
     String PlataformaEnseñanza;
 
-    public CursosenLinea(String TituloCurso, String Instructor, Date DuracionSemanas, String PlataformaEnseñanza) {
+    public CursosenLinea(String TituloCurso, String Instructor, int DuracionSemanas, String PlataformaEnseñanza) {
         this.TituloCurso = TituloCurso;
         this.Instructor = Instructor;
         this.DuracionSemanas = DuracionSemanas;
@@ -32,11 +32,11 @@ public class CursosenLinea {
         this.Instructor = Instructor;
     }
 
-    public Date getDuracionSemanas() {
+    public int getDuracionSemanas() {
         return DuracionSemanas;
     }
 
-    public void setDuracionSemanas(Date DuracionSemanas) {
+    public void setDuracionSemanas(int DuracionSemanas) {
         this.DuracionSemanas = DuracionSemanas;
     }
 

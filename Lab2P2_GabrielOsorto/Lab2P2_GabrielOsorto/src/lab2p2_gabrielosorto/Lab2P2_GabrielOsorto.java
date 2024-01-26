@@ -201,11 +201,41 @@ public class Lab2P2_GabrielOsorto {
                 }
                 Libros nuevoLibro = new Libros(TituloLibroAgredado, AutorTituloAgregado, GeneroLibroAgregado, AñoPublicacioLibroAgregado, LibroDisponibleAgregado);
                 libros.add(nuevoLibro);
+                //fin case 1
                 break;
+
             case 2:
-                
+                boolean ArticuloDisponibleAgregado = true;
+                System.out.print("Ingrese el nombre del Libro:");
+                String TituloArticuloAgredado = lt.nextLine();
+                System.out.print("Ingrese el nombre del autor:");
+                String AutorArticuloAgregado = lt.nextLine();
+                System.out.println("Ingrese el genero del libro:");
+                String TemaArticuloAgregado = lt.nextLine();
+                System.out.println("Ingrese el año de publicacion:");
+                int AñoPublicacioArticuloAgregado = sc.nextInt();
+                System.out.println("El libro esta disponible(si/no)?:");
+                String ArticuloAgregadoDisponible = lt.nextLine();
+                if (ArticuloAgregadoDisponible.equalsIgnoreCase("si")) {
+                    ArticuloDisponibleAgregado = true;
+                } else if (ArticuloAgregadoDisponible.equalsIgnoreCase("no")) {
+                    ArticuloDisponibleAgregado = false;
+                }
+                ArtiCULOS nuevoArticulo = new ArtiCULOS(TituloArticuloAgredado, AutorArticuloAgregado, TemaArticuloAgregado, AñoPublicacioArticuloAgregado, ArticuloDisponibleAgregado);
+                articulos.add(nuevoArticulo);
+                //fin case 2
                 break;
             case 3:
+                System.out.print("Ingrese el titulo del curso:");
+                String nombreCursoAgregado = lt.nextLine();
+                System.out.println("Ingrese el nombre del Instructor:");
+                String NombreInstruAgregado = lt.nextLine();
+                System.out.println("Ingrese la cantidad de semanas que durará:");
+                int DuracionSemanas = sc.nextInt();
+                System.out.println("Ingrese el nombre de la plataforma donde se recibira el curso:");
+                String NombrePlataforma = lt.nextLine();
+                CursosenLinea nuevoCurso = new CursosenLinea(nombreCursoAgregado, NombreInstruAgregado, DuracionSemanas, NombrePlataforma);
+                cursos.add(nuevoCurso);
                 break;
             case 4:
                 break;

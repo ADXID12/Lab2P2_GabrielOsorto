@@ -7,10 +7,10 @@ public class ArtiCULOS {
     String TituloArti;
     String AutorArti;
     String TemaArti;
-    Date FechaPubliArti;
+    int FechaPubliArti;
     Boolean OnlineAccess;
 
-    public ArtiCULOS(String TituloArti, String AutorArti, String TemaArti, Date FechaPubliArti, Boolean OnlineAccess) {
+    public ArtiCULOS(String TituloArti, String AutorArti, String TemaArti, int FechaPubliArti, Boolean OnlineAccess) {
         this.TituloArti = TituloArti;
         this.AutorArti = AutorArti;
         this.TemaArti = TemaArti;
@@ -42,11 +42,11 @@ public class ArtiCULOS {
         this.TemaArti = TemaArti;
     }
 
-    public Date getFechaPubliArti() {
+    public int getFechaPubliArti() {
         return FechaPubliArti;
     }
 
-    public void setFechaPubliArti(Date FechaPubliArti) {
+    public void setFechaPubliArti(int FechaPubliArti) {
         this.FechaPubliArti = FechaPubliArti;
     }
 
