@@ -93,9 +93,11 @@ public class Lab2P2_GabrielOsorto {
                                     case 3:
                                         System.out.println("Saliendo.....");
                                         seguirProfe = false;
+                                        System.out.println("");
                                         break;
                                     default:
                                         System.out.println("OPCION NO DISPONIBLE");
+                                        System.out.println("");
                                         break;
 
                                 }
@@ -121,7 +123,6 @@ public class Lab2P2_GabrielOsorto {
                                         System.out.println("");
                                         break;
                                     case 2:
-                                        System.out.println("Agregar recursos");
                                         AgregarRecursos(libros, articulos, cursos, conferencias);
                                         System.out.println("");
                                         break;
@@ -129,7 +130,8 @@ public class Lab2P2_GabrielOsorto {
                                         System.out.println("Modificar Recursos");
                                         break;
                                     case 4:
-                                        System.out.println("Eliminar Recurso");
+                                        EliminarRecurso(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
                                         break;
                                     case 5:
                                         System.out.println("Saliendo.....");
@@ -201,6 +203,7 @@ public class Lab2P2_GabrielOsorto {
                 }
                 Libros nuevoLibro = new Libros(TituloLibroAgredado, AutorTituloAgregado, GeneroLibroAgregado, AñoPublicacioLibroAgregado, LibroDisponibleAgregado);
                 libros.add(nuevoLibro);
+                System.out.println("");
                 //fin case 1
                 break;
 
@@ -223,25 +226,70 @@ public class Lab2P2_GabrielOsorto {
                 }
                 ArtiCULOS nuevoArticulo = new ArtiCULOS(TituloArticuloAgredado, AutorArticuloAgregado, TemaArticuloAgregado, AñoPublicacioArticuloAgregado, ArticuloDisponibleAgregado);
                 articulos.add(nuevoArticulo);
+                System.out.println("");
                 //fin case 2
                 break;
             case 3:
                 System.out.print("Ingrese el titulo del curso:");
                 String nombreCursoAgregado = lt.nextLine();
-                System.out.println("Ingrese el nombre del Instructor:");
+                System.out.print("Ingrese el nombre del Instructor:");
                 String NombreInstruAgregado = lt.nextLine();
-                System.out.println("Ingrese la cantidad de semanas que durará:");
+                System.out.print("Ingrese la cantidad de semanas que durará:");
                 int DuracionSemanas = sc.nextInt();
-                System.out.println("Ingrese el nombre de la plataforma donde se recibira el curso:");
+                System.out.print("Ingrese el nombre de la plataforma donde se recibira el curso:");
                 String NombrePlataforma = lt.nextLine();
                 CursosenLinea nuevoCurso = new CursosenLinea(nombreCursoAgregado, NombreInstruAgregado, DuracionSemanas, NombrePlataforma);
                 cursos.add(nuevoCurso);
+                System.out.println("");
+                //fin case 3
+                break;
+
+            case 4:
+                System.out.print("Ingrese el nombre de la conferencia:");
+                String TituloConferenciaAgregada = lt.nextLine();
+                System.out.print("Ingrese el nombre del conferencista:");
+                String NombreConferencista = lt.nextLine();
+                System.out.println("Ingrese la fecha de la conferencia(dd/mm/yyyy):");
+                String FechaConferenciaAgregada = lt.nextLine();
+                System.out.print("Ingrese la duracion de la conferenia(ejemplo=2hrs/1hr):");
+                String DuracionConferenciaAgregada = lt.nextLine();
+                System.out.print("Ingrese el link de acceso:");
+                String LinkAccesoConferencia = lt.nextLine();
+                ConferenciasVirtuales conferenciasvr = new ConferenciasVirtuales(TituloConferenciaAgregada, NombreConferencista, FechaConferenciaAgregada, DuracionConferenciaAgregada, LinkAccesoConferencia);
+                conferencias.add(conferenciasvr);
+                System.out.println("");
+                //fin case 4
+                break;
+
+            default:
+                System.out.println("Opcion no valida y/o existente");
+                System.out.println("");
+                break;
+            //Fin case default
+        }
+    }//fin metodo AgregarRecursos
+
+    public static void EliminarRecurso(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
+        System.out.println("Eliminar Recursos");
+        System.out.println("===Tipos de Recursos===");
+        System.out.println("1.Libros");
+        System.out.println("2.Articulos");
+        System.out.println("3.Cursos");
+        System.out.println("4. Conferencias");
+        System.out.print("Que tipo de recurso desea eliminar?:");
+        int opEliminar = sc.nextInt();
+        switch (opEliminar) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
                 break;
             case 4:
                 break;
             default:
                 break;
         }
-    }//fin metodo AgregarRecursos
+    }
 }//fin de la clase
 

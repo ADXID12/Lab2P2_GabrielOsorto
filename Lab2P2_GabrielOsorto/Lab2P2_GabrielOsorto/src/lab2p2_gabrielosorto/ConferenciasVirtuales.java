@@ -6,11 +6,11 @@ public class ConferenciasVirtuales {
 
     String Titulo;
     String Conferencista;
-    Date Fecha;
-    int Duracion;
+    String Fecha;
+    String Duracion;
     String EnlaceAcceso;
 
-    public ConferenciasVirtuales(String Titulo, String Conferencia, Date Fecha, int Duracion, String EnlaceAcceso) {
+    public ConferenciasVirtuales(String Titulo, String Conferencia, String Fecha, String Duracion, String EnlaceAcceso) {
         this.Titulo = Titulo;
         this.Conferencista = Conferencia;
         this.Fecha = Fecha;
@@ -34,19 +34,19 @@ public class ConferenciasVirtuales {
         this.Conferencista = Conferencista;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return Fecha;
     }
 
-    public void setFecha(Date Fecha) {
+    public void setFecha(String Fecha) {
         this.Fecha = Fecha;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return Duracion;
     }
 
-    public void setDuracion(int Duracion) {
+    public void setDuracion(String Duracion) {
         this.Duracion = Duracion;
     }
 
