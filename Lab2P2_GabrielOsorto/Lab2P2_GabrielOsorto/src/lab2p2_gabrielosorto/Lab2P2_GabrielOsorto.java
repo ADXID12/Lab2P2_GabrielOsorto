@@ -212,11 +212,11 @@ public class Lab2P2_GabrielOsorto {
 
             case 2:
                 boolean ArticuloDisponibleAgregado = true;
-                System.out.print("Ingrese el nombre del Libro:");
+                System.out.print("Ingrese el nombre del Articulo:");
                 String TituloArticuloAgredado = lt.nextLine();
                 System.out.print("Ingrese el nombre del autor:");
                 String AutorArticuloAgregado = lt.nextLine();
-                System.out.print("Ingrese el genero del libro:");
+                System.out.print("Ingrese el tema del articulo:");
                 String TemaArticuloAgregado = lt.nextLine();
                 System.out.print("Ingrese el año de publicacion:");
                 int AñoPublicacioArticuloAgregado = sc.nextInt();
@@ -386,6 +386,7 @@ public class Lab2P2_GabrielOsorto {
     //fin metodo eliminar recurso
 
     public static void ModificarRecurso(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
+        int opCambiar = 0;
         System.out.println("Modificar Recurso");
         System.out.println("===Tipos de Recursos===");
         System.out.println("1.Libros");
@@ -401,22 +402,80 @@ public class Lab2P2_GabrielOsorto {
                         Libros Books = librosArray.get(i);
                         System.out.println(Books);
                     }
-
+                    System.out.print("Ingrese la opcion que desea modificar:");
+                    opCambiar = sc.nextInt();
+                    if (opCambiar >= 1 && opCambiar <= librosArray.size()) {
+                        Libros LibroModificado = librosArray.get(opCambiar - 1);
+                        System.out.print("Ingrese el nuevo nombre:");
+                        String nuevoNombre = lt.nextLine();
+                        LibroModificado.setTituloLibro(nuevoNombre);
+                        System.out.print("Ingrese el nombre del autor del nuevo libro:");
+                        String nuevoAutor = lt.nextLine();
+                        LibroModificado.setAutorLibro(nuevoAutor);
+                        System.out.print("Ingrese el genero del nuevo libro:");
+                        String generoNuevo = lt.nextLine();
+                        LibroModificado.setGeneroLibro(generoNuevo);
+                        System.out.print("Ingrese el año de creacion del nuevo Libro:");
+                        int nuevoAño = sc.nextInt();
+                        LibroModificado.setAñoPubliLibro(nuevoAño);
+                        System.out.println("Ingrese si el libro esta disponible:");
+                        String disponibleNuevo = lt.nextLine();
+                        if (disponibleNuevo.equalsIgnoreCase("si")) {
+                            boolean NuevoDispo = true;
+                            LibroModificado.setDispoLibro(NuevoDispo);
+                        } else if (disponibleNuevo.equalsIgnoreCase("no")) {
+                            boolean NuevoDispo = false;
+                            LibroModificado.setDispoLibro(NuevoDispo);
+                        }
+                        System.out.println("Libro modificado exitosamente");
+                    } else {
+                        System.out.println("Libro no existente");
+                    }
                 } else {
-                    System.out.println("no hay cursos que modificar");
+                    System.out.println("no hay libro que modificar");
                 }
                 System.out.println("");
                 //Fin case 1
                 break;
+
             case 2:
                 if (!cursosArray.isEmpty()) {
                     for (int i = 0; i < articulosArray.size(); i++) {
                         ArtiCULOS arti = articulosArray.get(i);
                         System.out.println(arti);
                     }
+                    System.out.print("Ingrese la opcion que desea modificar:");
+                    opCambiar = sc.nextInt();
+                    if (opCambiar >= 1 && opCambiar <= articulosArray.size()) {
+                        ArtiCULOS arti = articulosArray.get(opCambiar - 1);
+                        System.out.print("Ingrese el nuevo nombre:");
+                        String nuevoNombre = lt.nextLine();
+                        arti.setTituloArti(nuevoNombre);
+                        System.out.print("Ingrese el nombre del autor del nuevo articulo:");
+                        String nuevoAutor = lt.nextLine();
+                        arti.setAutorArti(nuevoAutor);
+                        System.out.print("Ingrese el tema del nuevo articulo:");
+                        String generoNuevo = lt.nextLine();
+                        arti.setTemaArti(generoNuevo);
+                        System.out.print("Ingrese el año de creacion del nuevo articulo:");
+                        int nuevoAño = sc.nextInt();
+                        arti.setFechaPubliArti(nuevoAño);
+                        System.out.println("Ingrese si el articulo esta disponible:");
+                        String disponibleNuevo = lt.nextLine();
+                        if (disponibleNuevo.equalsIgnoreCase("si")) {
+                            boolean NuevoDispo = true;
+                            arti.setOnlineAccess(NuevoDispo);
+                        } else if (disponibleNuevo.equalsIgnoreCase("no")) {
+                            boolean NuevoDispo = false;
+                            arti.setOnlineAccess(NuevoDispo);
+                        }
+                        System.out.println("articulo modificado exitosamente");
+                    } else {
+                        System.out.println("articulo no existente");
+                    }
 
                 } else {
-                    System.out.println("no hay cursos que modificar");
+                    System.out.println("no hay articulos que modificar");
                 }
                 System.out.println("");
                 //fin case 2
@@ -428,7 +487,27 @@ public class Lab2P2_GabrielOsorto {
                         CursosenLinea cursoslista = cursosArray.get(i);
                         System.out.println(cursoslista);
                     }
-
+                    System.out.print("Ingrese la opcion que desea modificar:");
+                    opCambiar = sc.nextInt();
+                    if (opCambiar >= 1 && opCambiar <= cursosArray.size()) {
+                        CursosenLinea nuevocurso= cursosArray.get(opCambiar-1);
+                        
+                        System.out.print("Ingrese el titulo del nuevo curso:");
+                        String nombreCursoAgregado = lt.nextLine();
+                        nuevocurso.setTituloCurso(nombreCursoAgregado);
+                        System.out.print("Ingrese el nombre del Instructor del nuevo curso:");
+                        String NombreNuevoInstruAgregado = lt.nextLine();
+                        nuevocurso.setInstructor(NombreNuevoInstruAgregado);
+                        System.out.print("Ingrese la cantidad de semanas que durará el nuevo curso:");
+                        int NuevaDuracionSemanas = sc.nextInt();
+                        nuevocurso.setDuracionSemanas(NuevaDuracionSemanas);
+                        System.out.print("Ingrese el nombre de la plataforma donde se recibira el curso:");
+                        String NombrePlataformanuevoCurso = lt.nextLine();
+                        nuevocurso.setPlataformaEnseñanza(NombrePlataformanuevoCurso);
+                        System.out.println("curso modificado correctamente");
+                    }else{
+                        System.out.println("curso no existente");
+                    }
                 } else {
                     System.out.println("no hay cursos que modificar");
                 }
