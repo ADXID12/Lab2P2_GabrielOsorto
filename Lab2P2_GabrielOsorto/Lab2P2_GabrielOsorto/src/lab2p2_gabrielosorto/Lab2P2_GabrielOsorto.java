@@ -460,7 +460,7 @@ public class Lab2P2_GabrielOsorto {
                         System.out.print("Ingrese el año de creacion del nuevo articulo:");
                         int nuevoAño = sc.nextInt();
                         arti.setFechaPubliArti(nuevoAño);
-                        System.out.println("Ingrese si el articulo esta disponible:");
+                        System.out.println("Ingrese si el nuevo articulo esta disponible:");
                         String disponibleNuevo = lt.nextLine();
                         if (disponibleNuevo.equalsIgnoreCase("si")) {
                             boolean NuevoDispo = true;
@@ -490,8 +490,8 @@ public class Lab2P2_GabrielOsorto {
                     System.out.print("Ingrese la opcion que desea modificar:");
                     opCambiar = sc.nextInt();
                     if (opCambiar >= 1 && opCambiar <= cursosArray.size()) {
-                        CursosenLinea nuevocurso= cursosArray.get(opCambiar-1);
-                        
+                        CursosenLinea nuevocurso = cursosArray.get(opCambiar - 1);
+
                         System.out.print("Ingrese el titulo del nuevo curso:");
                         String nombreCursoAgregado = lt.nextLine();
                         nuevocurso.setTituloCurso(nombreCursoAgregado);
@@ -505,7 +505,7 @@ public class Lab2P2_GabrielOsorto {
                         String NombrePlataformanuevoCurso = lt.nextLine();
                         nuevocurso.setPlataformaEnseñanza(NombrePlataformanuevoCurso);
                         System.out.println("curso modificado correctamente");
-                    }else{
+                    } else {
                         System.out.println("curso no existente");
                     }
                 } else {
@@ -521,9 +521,30 @@ public class Lab2P2_GabrielOsorto {
                         ConferenciasVirtuales confe = conferenciasArray.get(i);
                         System.out.println(confe);
                     }
+                    if (opCambiar >= 1 && opCambiar <= conferenciasArray.size()) {
+                        ConferenciasVirtuales nuevaconfe = conferenciasArray.get(opCambiar - 1);
+                        System.out.print("Ingrese el nombre de la conferencia nueva:");
+                        String TituloNuevaConferenciaAgregada = lt.nextLine();
+                        nuevaconfe.setTitulo(TituloNuevaConferenciaAgregada);
+                        System.out.print("Ingrese el nombre del nuevo conferencista:");
+                        String NombreNuevoConferencista = lt.nextLine();
+                        nuevaconfe.setConferencista(NombreNuevoConferencista);
+                        System.out.println("Ingrese la fecha de la nueva conferencia(dd/mm/yyyy):");
+                        String FechaNuevaConferenciaAgregada = lt.nextLine();
+                        nuevaconfe.setFecha(FechaNuevaConferenciaAgregada);
+                        System.out.print("Ingrese la duracion de la nueva conferenia(ejemplo=2hrs/1hr):");
+                        String DuracionNuevaConferenciaAgregada = lt.nextLine();
+                        nuevaconfe.setDuracion(DuracionNuevaConferenciaAgregada);
+                        System.out.print("Ingrese el nuevo link de acceso:");
+                        String LinkAccesoConferenciaNueva = lt.nextLine();
+                        nuevaconfe.setEnlaceAcceso(LinkAccesoConferenciaNueva);
+                        System.out.println("Conferencia agregada con exito");
+                    } else {
+                        System.out.println("conferencia no disponible");
+                    }
 
                 } else {
-                    System.out.println("no hay cursos que modificar");
+                    System.out.println("no hay onferencia que modificar");
                 }
                 System.out.println("");
                 //Fin case 4
