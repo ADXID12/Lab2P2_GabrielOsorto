@@ -127,7 +127,8 @@ public class Lab2P2_GabrielOsorto {
                                         System.out.println("");
                                         break;
                                     case 3:
-                                        System.out.println("Modificar Recursos");
+                                        ModificarRecurso(libros, articulos, cursos, conferencias);
+                                        System.out.println("");
                                         break;
                                     case 4:
                                         EliminarRecurso(libros, articulos, cursos, conferencias);
@@ -384,5 +385,79 @@ public class Lab2P2_GabrielOsorto {
     }
     //fin metodo eliminar recurso
 
+    public static void ModificarRecurso(ArrayList<Libros> librosArray, ArrayList<ArtiCULOS> articulosArray, ArrayList<CursosenLinea> cursosArray, ArrayList<ConferenciasVirtuales> conferenciasArray) {
+        System.out.println("Modificar Recurso");
+        System.out.println("===Tipos de Recursos===");
+        System.out.println("1.Libros");
+        System.out.println("2.Articulos");
+        System.out.println("3.Cursos");
+        System.out.println("4. Conferencias");
+        System.out.print("Que tipo de recurso desea modificar?:");
+        int opModificar = sc.nextInt();
+        switch (opModificar) {
+            case 1:
+                if (!librosArray.isEmpty()) {
+                    for (int i = 0; i < librosArray.size(); i++) {
+                        Libros Books = librosArray.get(i);
+                        System.out.println(Books);
+                    }
+
+                } else {
+                    System.out.println("no hay cursos que modificar");
+                }
+                System.out.println("");
+                //Fin case 1
+                break;
+            case 2:
+                if (!cursosArray.isEmpty()) {
+                    for (int i = 0; i < articulosArray.size(); i++) {
+                        ArtiCULOS arti = articulosArray.get(i);
+                        System.out.println(arti);
+                    }
+
+                } else {
+                    System.out.println("no hay cursos que modificar");
+                }
+                System.out.println("");
+                //fin case 2
+                break;
+
+            case 3:
+                if (!cursosArray.isEmpty()) {
+                    for (int i = 0; i < cursosArray.size(); i++) {
+                        CursosenLinea cursoslista = cursosArray.get(i);
+                        System.out.println(cursoslista);
+                    }
+
+                } else {
+                    System.out.println("no hay cursos que modificar");
+                }
+                System.out.println("");
+                //fin case 3
+                break;
+
+            case 4:
+                if (!conferenciasArray.isEmpty()) {
+                    for (int i = 0; i < conferenciasArray.size(); i++) {
+                        ConferenciasVirtuales confe = conferenciasArray.get(i);
+                        System.out.println(confe);
+                    }
+
+                } else {
+                    System.out.println("no hay cursos que modificar");
+                }
+                System.out.println("");
+                //Fin case 4
+                break;
+
+            default:
+                System.out.println("Opcion no disponible");
+                System.out.println("");
+
+                break;
+
+        }//fin switch case modificar elemento
+    }
+    //fin metodo Modificar recuerso
 }//fin de la clase
 
