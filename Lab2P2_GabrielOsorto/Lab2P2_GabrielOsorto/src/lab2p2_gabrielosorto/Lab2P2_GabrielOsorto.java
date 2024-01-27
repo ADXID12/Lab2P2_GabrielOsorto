@@ -32,7 +32,6 @@ public class Lab2P2_GabrielOsorto {
         Usuario user3 = new Usuario(Username, Contra, TipoUsuario);
         usuarios.add(user3);
         //fin creacion usuarios
-
         System.out.println("Ingresar Cuenta");
         System.out.print("Ingrese su nombre de Usuario:");
         String user = lt.nextLine();
